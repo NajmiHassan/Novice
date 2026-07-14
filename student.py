@@ -1,4 +1,4 @@
-"""The AI protege. Three jobs, three functions, nothing else.
+"""The AI novice. Three jobs, three functions, nothing else.
 
   reply()      -> roleplays a confused student who argues from a fixed
                   misconception and only lets go of it for a real reason.

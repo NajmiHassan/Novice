@@ -1,4 +1,4 @@
-# Protégé
+# Novice
 
 Teach an AI that plays a confused student. It holds a specific wrong belief
 and argues from it. You have to teach it until it genuinely understands — then

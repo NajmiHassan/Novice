@@ -1,5 +1,5 @@
-"""Protege - teach a confused AI student until it understands, then it takes
-the quiz alone and its score is YOUR teaching score (the protege effect).
+"""Novice - teach a confused AI student until it understands, then it takes
+the quiz alone and its score is YOUR teaching score (the protégé effect).
 
 The grading is plain Python against topics.json. The LLM only roleplays.
 """
@@ -16,7 +16,7 @@ TOPICS = json.load(open("topics.json", encoding="utf-8"))
 # Skip the leading "_comment" key; the rest are real topics.
 TOPIC_NAMES = [k for k in TOPICS if not k.startswith("_")]
 
-st.set_page_config(page_title="Protege", page_icon="🎓")
+st.set_page_config(page_title="Novice", page_icon="🎓")
 
 
 # ---------------------------------------------------------------------------
@@ -37,7 +37,7 @@ if "topic" not in st.session_state:
 # Sidebar: pick topic, start over, peek at the belief state.
 # ---------------------------------------------------------------------------
 with st.sidebar:
-    st.header("Protege")
+    st.header("Novice")
     picked = st.selectbox("Topic", TOPIC_NAMES, index=TOPIC_NAMES.index(st.session_state.topic))
     if picked != st.session_state.topic:
         fresh_session(picked)
@@ -60,7 +60,7 @@ with st.sidebar:
 topic = st.session_state.topic
 data = TOPICS[topic]
 
-st.title("Teach your protege")
+st.title("Teach your novice")
 st.caption(f"Topic: **{topic}** — it holds a stubborn misconception. Teach it until it truly gets it.")
 
 # Confidence progress bar, updated after each turn.
